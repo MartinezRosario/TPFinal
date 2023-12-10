@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https:///www.thymeleaf.org" lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Iniciar Sesion</title>
+</head>
+<body>
+    <div th:replace="components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="access">
+            <div class="left">
+                <div class="form-wrapper">
+                    <div class="contact-heading">
+                        <h1>¡Bienvenido de vuelta!</h1>
+                        <p>Inicia sesión y continúa tu emocionante viaje con nosotros</p>
+                    </div>
+                    <form class="form" th:object="${user}" th:action="@{/login}" method="post">
+                        <div class="input-wrap w-100">
+                            <label>Correo Electronico</label>
+                            <input class="input" th:field="*{email}" type="text" required>
+                        </div>
+                        <div class="input-wrap w-100">
+                            <label>Contraseña</label>
+                            <input class="input" th:field="*{password}" type="password" required>
+                        </div>
+                        <div class="input-wrap">
+                            <button type="submit">Iniciar Sesion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https:///www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Puntos Turisticos</title>
+</head>
+<body>
+    <div th:replace="components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="introduction">
+            <h1>Embárcate en una aventura inolvidable con Jyru</h1>
+            <p>En Jyru, nos apasiona brindarte una experiencia de viaje excepcional. Descubre destinos impresionantes, desafía tus límites y crea recuerdos inolvidables con nosotros.</p>
+        </div>
+        <div class="points">
+            <div class="point" th:each="point:${point_list}">
+                <img th:src="${'data:image/png;base64,'+point.photo}" alt="" src="" width="250" height="250">
+                <h3 th:text="${point.name}"></h3>
+                <p th:text="${point.description}"></p>
+                <p th:text="${point.locate}"></p>
+                <a th:href="@{'/points/details!' + ${point.ID}}">Ver mas</a>
+            </div>
+        </div>
+    </div>
+    <div th:replace="components/footer :: footer"></div>
+</body>
+</html>

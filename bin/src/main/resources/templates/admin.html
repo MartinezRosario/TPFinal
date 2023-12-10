@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="https:///www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Administracion</title>
+</head>
+<body>
+    <div th:replace="components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="introduction">
+            <h1>Administracion de Usuarios</h1>
+            <p>En Jyru, hay muchos usuarios. Mantener el orden siempre es una buena opcion.</p>
+        </div>
+        <div class="actions">
+            <a href="/agregar/punto">Nuevo Punto</a>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Cerrar sesión" />
+            </form>
+        </div>
+        <div class="table">
+            <section class="header">
+            </section>
+            <section class="body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Contraseña</th>
+                            <th>Nacionalidad</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="user:${user_list}">
+                            <td th:text="${user.ID}">1</td>
+                            <td th:text="${user.name}">Juan Carlos</td>
+                            <td th:text="${user.lastName}">Gaspar</td>
+                            <td th:text="${user.email}">jcgmeedrem@gmail.com</td>
+                            <td th:text="${user.password}">123456</td>
+                            <td th:text="${user.nationality}">18</td>
+                            <td th:text="${user.type}">Administrador</td>
+                            <td th:switch="${user.state}">
+                                <p th:case="true">Activo</p>
+                                <p th:case="false">Inactivo</p>
+                            </td>
+                            <td>
+                                <a th:href="@{'/modificar/usuario/' + ${user.ID}}">Modificar</a>
+                                <a th:href="@{'/eliminar/usuario/' + ${user.ID}}">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="table">
+            <section class="header">
+            </section>
+            <section class="body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Locate</th>
+                            <th>Tipo</th>
+                            <th>Calificaciones</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="point:${point_list}">
+                            <td th:text="${point.ID}">1</td>
+                            <td th:text="${point.name}">Juan Carlos</td>
+                            <td th:text="${point.description}">Gaspar</td>
+                            <td th:text="${point.locate}">jcgmeedrem@gmail.com</td>
+                            <td th:text="${point.type}">123456</td>
+                            <td th:text="${point.rating}">18</td>
+                            <td th:switch="${point.state}">
+                                <p th:case="true">Activo</p>
+                                <p th:case="false">Inactivo</p>
+                            </td>
+                            <td>
+                                <a th:href="@{'/punto/modificar/' + ${point.ID}}">Modificar</a>
+                                <a th:href="@{'/punto/elimnar/' + ${point.ID}}">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <div th:replace="components/footer :: footer"></div>
+</body>
+</html>

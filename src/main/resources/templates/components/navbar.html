@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{style.css}">
+    <title>Navbar</title>
+</head>
+<body>
+    <div th:fragment="navbar">
+        <header>
+            <nav>
+                <h1>Jyru</h1>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/explorer">Descubrir</a></li>
+                    <li><a href="/">Planes</a></li>
+                    <li><a href="/">Sobre Nosotros</a></li>
+                    <li><a class="signin" href="/login">Ingresar</a></li>
+                    <li><a class="signup" href="/accounts/new">Soy Nuevo</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+</html>

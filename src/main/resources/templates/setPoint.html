@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Nuevo Punto de Interes</title>
+</head>
+<body>
+    <div th:replace="components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="access">
+            <div class="left">
+                <div class="form-wrapper">
+                    <div class="contact-heading">
+                        <h1>Punto Turistico</h1>
+                        <p></p>
+                    </div>
+                    <form class="form" th:object="${point}" th:action="@{/agregar/punto}" enctype="multipart/form-data" method="post">
+                        <div class="input-wrap">
+                            <label>Nombre</label>
+                            <input class="input" th:field="*{name}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Descripcion</label>
+                            <input class="input" th:field="*{description}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Fotografia</label>
+                            <input class="form-control" type="file" name="file" accept="image/png, image/jpeg, image/gif, image/x-png, image/jpg"
+                                onchange="loadFile(event)">
+                            <img id="output" style="width:150px; padding:3px">
+                        </div>
+                        <div class="input-wrap">
+                            <label>Direccion</label>
+                            <input class="input" th:field="*{locate}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Tipo</label>
+                            <select class="select" th:field="*{type}" required>
+                                <option th:value="Traking">Senderismo</option>
+                                <option th:value="Others">Otros</option>
+                            </select>
+                        </div>
+                        <div class="input-wrap">
+                            <button type="submit">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

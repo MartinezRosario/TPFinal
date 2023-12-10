@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https:///www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Title</title>
+</head>
+<body>
+    <div th:replace="app/components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="actions">
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Cerrar sesión" />
+            </form>
+        </div>
+        <div class="table">
+            <section class="header">
+            </section>
+            <section class="body">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Locate</th>
+                        <th>Tipo</th>
+                        <th>Calificaciones</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="point:${point_list}">
+                        <td th:text="${point.ID}">1</td>
+                        <td th:text="${point.name}">Juan Carlos</td>
+                        <td th:text="${point.description}">Gaspar</td>
+                        <td th:text="${point.locate}">jcgmeedrem@gmail.com</td>
+                        <td th:text="${point.type}">123456</td>
+                        <td th:text="${point.rating}">18</td>
+                        <td th:switch="${point.state}">
+                            <p th:case="true">Activo</p>
+                            <p th:case="false">Inactivo</p>
+                        </td>
+                        <td>
+                            <a th:href="@{'/points/edit!' + ${point.ID}}">Modificar</a>
+                            <a th:href="@{'/points/delete!' + ${point.ID}}">Eliminar</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <a href="/points/new">Nuevo Punto</a>
+        </div>
+    </div>
+    <div th:replace="app/components/footer :: footer"></div>
+</body>
+</html>

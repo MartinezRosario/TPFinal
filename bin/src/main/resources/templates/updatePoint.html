@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" th:href="@{/style.css}">
+    <title>Modificar Punto</title>
+</head>
+<body>
+    <div th:replace="components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="access">
+            <div class="left">
+                <div class="form-wrapper">
+                    <div class="contact-heading">
+                        <h1>Punto Turistico</h1>
+                        <p></p>
+                    </div>
+                    <form class="form" th:object="${point}" th:action="@{/modificar/punto}" method="post">
+                        <div class="input-wrap">
+                            <label>Nombre</label>
+                            <input class="input" th:text="${name}" th:field="*{name}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Descripcion</label>
+                            <input class="input" th:text="${description}" th:field="*{description}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Direccion</label>
+                            <input class="input" th:text="${locate}" th:field="*{locate}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Tipo</label>
+                            <select class="select" th:switch="${type}" th:field="*{type}" required>
+                                <option th:value="Traking">Senderismo</option>
+                                <option th:value="Others">Otros</option>
+                            </select>
+                        </div>
+                        <div class="input-wrap">
+                            <button type="submit">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

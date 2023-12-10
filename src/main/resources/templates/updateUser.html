@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Modificar Usuario</title>
+</head>
+<body>
+    <div th:replace="components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="access">
+            <div class="left">
+                <div class="form-wrapper">
+                    <div class="contact-heading">
+                        <h1>¡Un dato mal es un tramite perdido!</h1>
+                        <p>Actualiza los datos constantemente para evitar problemas</p>
+                    </div>
+                    <form class="form" th:object="${user}" th:action="@{/modificar/usuario}" method="post">
+                        <div class="input-wrap">
+                            <label>Nombre</label>
+                            <input class="input" th:text="${name}" th:field="*{name}" type="text" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Apellido</label>
+                            <input class="input" th:text="${lastName}" th:field="*{lastName}" type="text" required>
+                        </div>
+                        <div class="input-wrap w-100">
+                            <label>Correo Electronico</label>
+                            <input class="input" th:text="${email}" th:field="*{email}" type="email" required>
+                        </div>
+                        <div class="input-wrap w-100">
+                            <label>Contraseña</label>
+                            <input class="input" th:text="${password}" th:field="*{password}" type="password" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Nacionalidad</label>
+                            <select class="select" th:switch="${name}" th:field="*{nationality}" required>
+                                <option th:value="AF">Afganistán</option>
+                                <option th:value="AL">Albania</option>
+                                <option th:value="DZ">Argelia</option>
+                                <option th:value="AD">Andorra</option>
+                                <option th:value="AO">Angola</option>
+                                <option th:value="AI">Anguila</option>
+                                <option th:value="AQ">Antártida</option>
+                                <option th:value="AG">Antigua y Barbuda</option>
+                                <option th:value="AR">Argentina</option>
+                                <option th:value="AM">Armenia</option>
+                                <option th:value="AW">Aruba</option>
+                                <option th:value="AU">Australia</option>
+                                <option th:value="AT">Austria</option>
+                                <option th:value="AZ">Azerbaiyán</option>
+                                <option th:value="BS">Bahamas</option>
+                                <option th:value="BH">Bahréin</option>
+                                <option th:value="BD">Bangladesh</option>
+                                <option th:value="BB">Barbados</option>
+                                <option th:value="BY">Bielorrusia</option>
+                                <option th:value="BE">Bélgica</option>
+                                <option th:value="BZ">Belice</option>
+                                <option th:value="BJ">Benín</option>
+                                <option th:value="BM">Bermudas</option>
+                                <option th:value="BT">Bután</option>
+                                <option th:value="BO">Bolivia</option>
+                                <option th:value="BA">Bosnia y Herzegovina</option>
+                                <option th:value="BW">Botsuana</option>
+                                <option th:value="BR">Brasil</option>
+                                <option th:value="IO">Territorio Británico del Océano Índico</option>
+                                <option th:value="BN">Brunéi</option>
+                                <option th:value="BG">Bulgaria</option>
+                                <option th:value="BF">Burkina Faso</option>
+                                <option th:value="BI">Burundi</option>
+                                <option th:value="KH">Camboya</option>
+                                <option th:value="CM">Camerún</option>
+                                <option th:value="CA">Canadá</option>
+                            </select>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Tipo de Usuario</label>
+                            <select class="select" th:switch="${name}" th:field="*{type}" required>
+                                <option th:value="Turist">Turista</option>
+                                <option th:value="Admin">Administrador</option>
+                            </select>
+                        </div>
+                        <div class="input-wrap">
+                            <button type="submit">Registrarme</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

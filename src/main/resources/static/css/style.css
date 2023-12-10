@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*
+    Navbar Design
+*/
+
+header {
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+header nav {
+    width: 95%;
+    height: 7%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    padding: 3px 15px;
+}
+
+header nav ul li .signin {
+    padding: 3px 15px;
+    border: 1px #121213 solid;
+    border-radius: 20px;
+}
+
+header nav ul li .signup {
+    padding: 3px 15px;
+    background: #000;
+    border-radius: 20px;
+    color: #fff;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #121213;
+    font-size: 13px;
+    font-weight: 500;
+    transition: .3s linear;
+}
+
+header nav ul li a:hover {
+    color: gray;
+}
+
+/*
+
+    Content Home
+
+*/
+
+.content {
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.head {
+    position: relative;
+    margin-top: 32px;
+    margin-start: 16px;
+    width: 100%;
+    height: 64%;
+}
+
+.head::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('/img/home_background.jpg') no-repeat center center/cover;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.head .info {
+    width: 500px;
+    height: auto;
+    color: #fff;
+    padding: 30px;
+}
+
+.head .info h1 {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.head .info p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.head .info button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    color: #fff;
+    background: #000;
+    outline: none;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.head .info button:hover {
+    background: #121223;
+    border: 2px solid #121223;
+}
+
+/*
+header .recommend {
+    position: relative;
+    width: 95%;
+    height: auto;
+    margin: auto;
+    border: 1px solid #000;
+}
+
+header .recommend .points {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    top: 40px;
+    border: 1px solid #000;
+}
+*/
+
+.recommend {
+    position: relative;
+    width: 95%;
+    height: auto;
+    margin: auto;
+    top: 60px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    box-shadow: 0px 20px 25px -10px rgb(165, 165, 165);
+}
+
+.recommend::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgb(16, 16, 16, .32);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.recommend h4 {
+    margin: 0;
+    padding: 15px 0px 15px 2%;
+    color: #fff;
+}
+
+.recommend .examples {
+    width: 96%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recommend .examples .point {
+    width: 220px;
+    height: 180px;
+}
+
+.recommend .examples .point h3 {
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.recommend .examples .point img {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.introduction {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.introduction h1 {
+    font-weight: 600;
+    text-align: center;
+    margin: 16px;
+}
+
+.introduction p {
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+}
+
+.introduction img {
+    width: 512px;
+    height: 512px;
+}
+
+/*
+
+    Error Design
+
+*/
+
+.error {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 128px;
+    margin-bottom: 128px;
+}
+
+/*
+
+    Sign Up Design
+
+*/
+
+.access {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.access > div {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.left {
+    width: 100%;
+    margin: 0 auto;
+    padding: 65px 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-heading h1 {
+    font-size: 3.5rem;
+    line-height: .9;
+    white-space: nowrap;
+    margin-bottom: 1.2rem;
+}
+
+.contact-heading p {
+    line-height: 1.1;
+    font-size: 1rem;
+}
+
+.form {
+    display: grid;
+    margin-top: 2.55rem;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.input-wrap.w-100 {
+    grid-column: span 2;
+}
+
+.input {
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+}
+
+.select {
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    color: #fff;
+    background: #000;
+    outline: none;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+/*
+
+    Admin Panel Design
+
+*/
+
+.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0px 20px 25px -10px rgb(165, 165, 165);;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.body {
+    width: 95%;
+    max-height: calc(89% - .8rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+
+.body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #D5D1DEFE;
+}
+
+tbody tr:nth-child(event) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: #fff6;
+}
+
+/*
+
+    Fotter Design
+
+*/
+
+footer {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer h2 {
+    text-align: center;
+    margin: 0;
+    margin-top: 25px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+footer p {
+    text-align: center;
+    width: 400px;
+    font-size: 13px;
+
+}

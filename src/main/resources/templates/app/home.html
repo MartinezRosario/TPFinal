@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https:///www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Inicio</title>
+</head>
+<body>
+    <div th:replace="app/components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="head">
+            <div class="info">
+                <h1>¡Atrévete a explorar el mundo!</h1>
+                <p>¡Descubre un universo de emociones en cada rincón del mundo, donde la aventura te espera con los brazos abiertos!</p>
+                <button>Inicia tu Aventura</button>
+            </div>
+            <div class="recommend">
+                <h4>Aventuras por comenzar</h4>
+                <div class="examples">
+                    <div class="point">
+                        <h3>Jujuy</h3>
+                        <img th:src="@{/img/example_point_jujuy.jpg}" alt="#" src="#">
+                    </div>
+                    <div class="point">
+                        <h3>Salta</h3>
+                        <img th:src="@{/img/example_point_jujuy.jpg}" alt="#" src="#">
+                    </div>
+                    <div class="point">
+                        <h3>Tucuman</h3>
+                        <img th:src="@{/img/example_point_jujuy.jpg}" alt="#" src="#">
+                    </div>
+                    <div class="point">
+                        <h3>Entre Rios</h3>
+                        <img th:src="@{/img/example_point_jujuy.jpg}" alt="#" src="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="introduction">
+        <h1>Embárcate en una aventura inolvidable con Jyru</h1>
+        <p>En Jyru, nos apasiona brindarte una experiencia de viaje excepcional. Descubre destinos impresionantes, desafía tus límites y crea recuerdos inolvidables con nosotros.</p>
+    </div>
+    <div th:replace="app/components/footer :: footer"></div>
+</body>
+</html>

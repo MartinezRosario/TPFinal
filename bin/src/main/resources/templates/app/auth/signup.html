@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="https:///www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Soy Nuevo</title>
+</head>
+<body>
+    <div th:replace="app/components/navbar :: navbar"></div>
+    <div class="content">
+        <div class="access">
+            <div class="left">
+                <div class="form-wrapper">
+                    <div class="contact-heading">
+                        <h1>Bienvenido a nuestro <br> paraíso turístico!</h1>
+                        <p>Descubre, disfruta y vive experiencias inolvidables con nosotros. ¡Nos alegra tenerte aquí!</p>
+                    </div>
+                    <form class="form" th:object="${user}" th:action="@{/accounts/new}" method="post">
+                        <div class="input-wrap">
+                            <label>Nombre</label>
+                            <label>
+                                <input class="input" th:field="*{name}" type="text">
+                            </label>
+                            <div class="error-text" th:if="${#fields.hasErrors('name')}">
+                                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Apellido</label>
+                            <label>
+                                <input class="input" th:field="*{lastName}" type="text" required>
+                            </label>
+                            <div class="error-text" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+                        </div>
+                        <div class="input-wrap w-100">
+                            <label>Correo Electronico</label>
+                            <label>
+                                <input class="input" th:field="*{email}" type="email" required>
+                            </label>
+                            <p class="error-text" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+                        </div>
+                        <div class="input-wrap w-100">
+                            <label>Contraseña</label>
+                            <label>
+                                <input class="input" th:field="*{password}" type="password" required>
+                            </label>
+                            <p class="error-text" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Nacionalidad</label>
+                            <label>
+                                <select class="select" th:field="*{nationality}" required>
+                                    <option th:each="country:${country_list}" th:value="${country.code}" th:text="${country.name}"></option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Tipo de Usuario</label>
+                            <label>
+                                <select class="select" th:field="*{type}" required>
+                                    <option th:value="User">Turista</option>
+                                    <option th:value="Staff">Moderador</option>
+                                    <option th:value="Administrator">Administrador</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="input-wrap">
+                            <button type="submit">Registrarme</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
